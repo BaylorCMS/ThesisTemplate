@@ -11,7 +11,7 @@
 % with additional inspiration from a template by David Jack (2011);
 % rewritten and simplified by Jonathan Drake (2013).
 % Additional stuff by Alvin Jude (2014).
-% Formatting updates by Kenneth Call/Kenichi Hatakeyama (2019).
+% Formatting updates by Kenneth Call, Kenichi Hatakeyama (2019).
 % Small edits by Caleb Smith (2020).
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%
