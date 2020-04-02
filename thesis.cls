@@ -2,7 +2,7 @@
 %
 % Baylor University Master's Thesis LaTeX Template
 %
-% Last Updated in June 2014
+% Last Updated in 2020
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -10,7 +10,8 @@
 % created by Jeff Donahoo (2000), with additional
 % inspiration from a template by David Jack (2011);
 % rewritten and simplified by Jonathan Drake (2013).
-% additional stuff by Alvin Jude (2014)
+% Additional stuff by Alvin Jude (2014).
+% Small edits by Caleb Smith (2020).
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%
 
