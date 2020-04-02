@@ -1,5 +1,6 @@
-% Baylor University Master's Thesis LaTeX template
+% Baylor University Thesis LaTeX template
 % Template created by Jonathan Drake (2013)
+% Template updated by Caleb Smith (2020)
 
 % Thesis class, based on report
 \documentclass
@@ -18,28 +19,28 @@
 \usepackage{bookmark}  % faster bookmarks manegment (alexsalo)
 
 % Thesis parameters
-\title{Baylor University Master's Thesis \LaTeX\ Template}
+\title{Baylor University Thesis \LaTeX\ Template (Replace with Your Thesis Title)}
 \author{Your Name}
-\holding{B.S.}
-\seeking{M.S.}
-\degree{Master of Science}
-\date{June 2013}
+\holding{B.S., M.S.}
+\seeking{Ph.D.}
+\degree{Doctor of Philosophy}
+\date{August 2020}
 
 % Administration
 \graduateDean{J. Larry Lyon, Ph.D.}
-\department{Department of Computer Science}
-\departmentChair{Gregory D. Speegle, Ph.D.}
+\department{Department of Physics}
+\departmentChair{Dwight P. Russell, Ph.D.}
 
-% Supervisor (adviser / mentor)
+% Supervisor (advisor / mentor)
 \supervisor{Name O. Supervisor, Ph.D.}
-\supervisorTitle{Mentor}
+\supervisorTitle{Advisor}
 
 %  Readers (committee members)
 \readerOne{Your A. Reader, Ph.D.}
 \readerTwo{U. Another Reader, Psy.D.}
 \readerThree{J. J. J. Heimer-Schmidt, M.D.}
-%\readerFour{...}
-%\readerFive{...}
+\readerFour{C. J. Schmidty, Ph.D.}
+%\readerFive{Silly Billy, Ph.D.}
 
 % Abstract
 \abstract{This is the abstract. Lorem ipsum dolor sit amet, consectetur
@@ -72,29 +73,29 @@ Nulla euismod dolor nec nulla ornare blandit.}
 % Document body
 \begin{document}
 	\pdfbookmark[-1]{CONTENT}{bookmark:Content}  % Top level bookmark to hold all chapters
-    
+
     %Help format to graduate school requirements.
     \setlength{\belowdisplayskip}{1ex} \setlength{\belowdisplayshortskip}{1ex}
     \setlength{\abovedisplayskip}{1ex} \setlength{\abovedisplayshortskip}{1ex}
 
 	% Chapters
 	\include{ch1}
-	\include{ch2} 
+	\include{ch2}
 	\include{ch3}
 	\include{ch4}
 	\include{ch5}
-	
+
 	% Appendices (optional)
 	% TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
-	\thesisAppendixPage 
+	\thesisAppendixPage
 	\begin{appendices}
 		\appendix % Vaclav Cibur compile fix
 		\include{appendixA}
 		\include{appendixB}
 	\end{appendices}
-	
+
 	% Bibliography
 	\bibliographystyle{chicago} % or whatever style your department uses
 	\bibliography{thesis}
-	
+
 \end{document}
