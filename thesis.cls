@@ -1,34 +1,33 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Baylor University PhD Thesis LaTeX Template
-% Last Updated in July 2019
-%
-% Kenneth Call/Kenichi Hatakeyama
+% Baylor University Thesis LaTeX Template
+% Last Updated in April 2020
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Baylor University Master's Thesis LaTeX Template
-% Last Updated in June 2014
+% Authors
 %
-% %%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Some code derived from an early template
-% created by Jeff Donahoo (2000), with additional
-% inspiration from a template by David Jack (2011);
+% Some code derived from an early template created by Jeff Donahoo (2000),
+% with additional inspiration from a template by David Jack (2011);
 % rewritten and simplified by Jonathan Drake (2013).
-% additional stuff by Alvin Jude (2014)
+% Additional stuff by Alvin Jude (2014).
+% Formatting updates by Kenneth Call/Kenichi Hatakeyama (2019).
+% Small edits by Caleb Smith (2020).
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ================== Changelog ================================
+%
+% Outdated: use git to track changes!
+%
 % Added \comment{} - simplifies multiline comments
 % Fixed spaces after floats: images & tables
-% -- NOTE: 
+% -- NOTE:
 %    This only works when floats are at to of page. There is no guarantee that inline images and tables
-%    Will actually work. If anybody needs this, will need to be fixed     
+%    Will actually work. If anybody needs this, will need to be fixed
 % final version changelog:
 % Dedication: Moved to 3 inches from the top, removed title ("DEDICATION") from the top of the page
-% Double spacing AFTER level 3 (\subsection) when text follows. 
+% Double spacing AFTER level 3 (\subsection) when text follows.
 % Add period after level 5 (followed by 2 spaces)
 % Added APPENDICES separator page
 % =============================================================
@@ -66,14 +65,14 @@
 	\setlength{\parindent}{0.3in} % used in triplespace
 	\setlength{\labelsep}{0.5em}
 	\setlength{\labelwidth}{1.5em}
-	
+
 	\onecolumn
 	\raggedbottom
 	\doublespacing
-	
+
 	\setcounter{tocdepth}{2}
 	\setcounter{secnumdepth}{3}
-	
+
 }
 
 % We need both double and single spacing
@@ -81,17 +80,17 @@
 
 % -----------------------------------------------
 % TABLE FORMATING STUFF
-% This is confusing because the caption is at the top. 
+% This is confusing because the caption is at the top.
 %%%%%%% THERE HAS TO BE A BETTER WAY JIM
 % aboveskip = distance between caption and float
 % belowskip = distace between caption and text
 % Set the caption label separator and spacing for all floats
 \RequirePackage{caption}
 \captionsetup{labelsep=colon,font=singlespacing}
-\captionsetup[table]{belowskip=-0.1em, aboveskip=1em} 
+\captionsetup[table]{belowskip=-0.1em, aboveskip=1em}
 %\captionsetup[figure]{belowskip=2em, aboveskip=2em}
 
-% because we set this which determines the distance between the table 
+% because we set this which determines the distance between the table
 % and the preeceeding / proceeding text, we HAVE to set the belowskip in the thing above to 0
 % this is also applicable for the images and pictures. Fortunately the configuration
 % for both are the same. If they're not, then we're in big barney
@@ -119,7 +118,7 @@
 \brokenpenalty=10000	% Eliminates page breaks at hyphens
 \clubpenalty=10000 		% Eliminates orphan lines
 \widowpenalty=10000 	% Eliminates widowed lines
-	
+
 
 % Set the names of prologue pages
 \newcommand*{\ToCname}{TABLE OF CONTENTS}
@@ -169,7 +168,7 @@
 \setlength{\labelwidth}{1.5em}
 
 
-	
+
 % Macro that converts the given number to a corresponding number name
 \newcommand{\arabicText}[1]
 {
@@ -202,7 +201,7 @@
 {
 	% the footnotes should start with 1 in each chapter
 	\setcounter{footnoteA}{0}
-	
+
 	\ifnum \c@secnumdepth >\m@ne
 		\refstepcounter{chapter}%
 		\typeout{**************************}
@@ -219,7 +218,7 @@
 		\centering
 		\vspace*{0.43in}
 		\MakeUppercase{\@chapapp{}}%
-		\hspace{-0.25em} % for the chapter text to look pretty. 
+		\hspace{-0.25em} % for the chapter text to look pretty.
 		\arabicText{\thechapter}
 		\vspace{-1ex}
 		\singlespacing{#2}\\
@@ -235,11 +234,11 @@
 	\@startsection{section}{1}{0pt}{1em}{0.001ex}%skip: 2 space before, 1 space after. adjusted to 0.001 so that it's virually none
 	{\centering\normalfont\slshape\normalsize}
 }
-% IF there is content text immediately after level 3, 
+% IF there is content text immediately after level 3,
 %   THEN distance between Level 3 and Content text = doublespace.
-% IF there is level 4 header immediately after level 3, 
-%   THEN distance between Level 3 and Level 4 = triplespace. 
-	
+% IF there is level 4 header immediately after level 3,
+%   THEN distance between Level 3 and Level 4 = triplespace.
+
 \renewcommand{\subsection}[1]
 {
 	\@startsection{subsection}{2}{0pt}{0.001ex}{0.001ex}
@@ -259,16 +258,16 @@
   \oldenumerate
   \setlength{\itemsep}{1em}
   \setlength{\parskip}{-1em}
-  \setlength{\parsep}{0pt}	  
+  \setlength{\parsep}{0pt}
 }
 %% standardize itemize and enumerate spacing
 \let\olditemize\itemize
 \renewcommand{\itemize}{
   \olditemize
-  \setlength{\parsep}{-\baselineskip}	  
+  \setlength{\parsep}{-\baselineskip}
   \setlength{\itemsep}{1em}
   \setlength{\parskip}{-1em}
-  
+
 }
 
 % removes extra space after the list (itemize). So it will be double space instead of triple
@@ -328,7 +327,7 @@
 {
 	\thispagestyle{masters_title_page}
 	\doublespacing
-	
+
 	\begin{center}
 	\vspace*{0.1in}
 	        \singlespacing\thesisTitle \\
@@ -341,12 +340,12 @@
 	\\
 	\vspace{0.1in}
 	\singlespacing
-    	Submitted to the Graduate Faculty of\\ 
+    	Submitted to the Graduate Faculty of\\
 	Baylor University in Partial Fulfillment of the \\
 	Requirements for the Degree \\
 	of \\
 	\thesisDegree
-	
+
 	\vspace{0.25in}
 	\vfill
 	\doublespacing
@@ -361,10 +360,10 @@
 		\if@makeReaderFive \thesisSignature{\thesisReaderFive}{80mm} \fi
 		\\
 	}
-	
+
 	\vspace{0.25in}
 	\vfill
-	
+
 	{
 		\addtolength{\leftskip}{2.6in}
 		Accepted by the Graduate School \\
@@ -372,7 +371,7 @@
 		\thesisConfDate
 		\thesisSignature{\thesisDean, Dean}{80mm} \\
 	}
-	
+
 	\end{center}
 	\clearpage
 }
@@ -425,8 +424,8 @@
 % uses the tocloft package
 %\renewcommand\cftchapleader{\cftdotfill{\cftchapdotsep}}
 \renewcommand\cftchapdotsep{\cftsecdotsep} % first define the chap dots to be equal to the section dots
-\renewcommand\cftchapleader{\normalfont\cftdotfill{\cftchapdotsep}} % then remove the bolds. 
-\renewcommand\cftchappagefont{\normalfont} % this defaults to bold, overwrite that. 
+\renewcommand\cftchapleader{\normalfont\cftdotfill{\cftchapdotsep}} % then remove the bolds.
+\renewcommand\cftchappagefont{\normalfont} % this defaults to bold, overwrite that.
 \renewcommand\cftpartpagefont{\normalfont}
 \renewcommand\cftpartafterpnum{\vspace{1em}}
 \renewcommand\cftchapafterpnum{\vspace{1em}}
@@ -511,7 +510,7 @@
 % Dedication page (optional)
 \newcommand{\thesisDedicationpage}
 {
-	\if@makeDedication		
+	\if@makeDedication
 		\thispagestyle{plain}
 		\addtocontents{toc}{\protect\vspace{-0.25in}}
 		\phantomsection  % Anchor the bookmark to this position
@@ -544,15 +543,15 @@
 {
 	% Where to start counting pages (Baylor's first pages are unpaginated, but counted!)
 	\pagenumbering{roman}
-	
+
 	% Unpaginated preliminary pages
 	\thesisAbstractpage
 	\thesisTitlePage
 	\thesisCopyrightPage
-	
+
 	% Where to start paginating (thus making ToC page "iv" or so)
 	\pagestyle{plain}
-	
+
 	% Paginated preliminary pages
 	\thesisToCpage
         \thesisAcropage
@@ -593,14 +592,14 @@
 \renewcommand*{\document}
 {
 	\interceptedDocument
-	
+
 	% Front matter
 	\if@makeShortThesis
 		\thesisAbstractpage
 	\else
 		\thesisPrologue
 	\fi
-	
+
 	% Document body follows
 	\doublespacing
 	\pagenumbering{arabic}
@@ -641,7 +640,7 @@
 \def\belowspace{}
 \def\amanda{}
 
-% Alvin's Note: Stacking is obsolete. Handled by the subsections respective headers 
+% Alvin's Note: Stacking is obsolete. Handled by the subsections respective headers
 \newcommand*{\stack}{}
 
 % Rysavy: footnotes must have the same indent as paragraph
