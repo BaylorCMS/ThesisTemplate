@@ -1,4 +1,4 @@
-# Baylor University Master's Thesis LaTeX template
+# Baylor University Thesis LaTeX template
 #
 # Trash auxiliary files: make clean
 # Compile thesis: make
@@ -15,7 +15,7 @@ MAIN_TEX := thesis.tex
 
 TARGET = $(MAIN_TEX:%.tex=%.pdf)
 
-COPY = if test -r $(<:%.tex=%.toc); then cp $(<:%.tex=%.toc) $(<:%.tex=%.toc.bak); fi 
+COPY = if test -r $(<:%.tex=%.toc); then cp $(<:%.tex=%.toc) $(<:%.tex=%.toc.bak); fi
 
 all: $(TARGET)
 
@@ -36,4 +36,3 @@ clean:
 		$(MAIN_TEX:%.tex=%.lot) $(MAIN_TEX:%.tex=%.toc) *.aux
 
 .PHONY: all clean
-
