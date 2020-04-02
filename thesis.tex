@@ -1,6 +1,5 @@
-% Baylor University Thesis LaTeX template
+% Baylor University Master's Thesis LaTeX template
 % Template created by Jonathan Drake (2013)
-% Template updated by Caleb Smith (2020)
 
 % Thesis class, based on report
 \documentclass
@@ -15,35 +14,89 @@
 \usepackage{amsmath}
 \usepackage{chicago}
 \usepackage{lipsum} % Because this comes with a demo
-\usepackage{hyperref}  % for workin links and bookmarks (alexsalo)
+\usepackage{hyperref}  % for workin links and bookmarks (alexsalo), and can help make refences to other chapters and sections.
+\usepackage[capitalise]{cleveref}  % used to format references to ranges of references.
 \usepackage{bookmark}  % faster bookmarks manegment (alexsalo)
+\usepackage{ifthen}
+\usepackage[binary-units]{siunitx} %Easier use of scientific notation (Check also CMS defined units)
+\usepackage{topcapt} %This lets us put the table caption at the top using \topcaption
+\usepackage{amssymb} %This is for the checkmark symbol
+%\usepackage[nomargin,inline,marginclue,draft]{fixme}
+\usepackage{acronym} %This is used to create the List of acronyms
+\usepackage{cite}
+\usepackage[hang,flushmargin]{footmisc}
+
+% KH: fixme/fxnote using the todonotes package.
+\usepackage[textsize=footnotesize,textwidth=2.7cm]{todonotes}
+\newcommand{\tinytodo}[2][]
+{\todo[caption={#2}, #1]{\renewcommand{\baselinestretch}{0.8}\selectfont#2\par}}
+\newcommand{\fxnote}[1]{\tinytodo{#1}}
+
+% KH: making Chapter & Section from autoref capitalized
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\newcommand{\crefrangeconjunction}{--}
 
 % Thesis parameters
-\title{Baylor University Thesis \LaTeX\ Template (Replace with Your Thesis Title)}
-\author{Your Name}
-\holding{B.S., M.S.}
+\title{Search for Supersymmetric Partners of the Top Quark with the CMS Detector and Novel Top Quark Tagging Algorithms}
+\author{Kenneth Remington Call}
+\holding{B.Sc., M.A.}
 \seeking{Ph.D.}
 \degree{Doctor of Philosophy}
-\date{August 2020}
+\date{August 2019}
 
 % Administration
 \graduateDean{J. Larry Lyon, Ph.D.}
 \department{Department of Physics}
 \departmentChair{Dwight P. Russell, Ph.D.}
 
-% Supervisor (advisor / mentor)
-\supervisor{Name O. Supervisor, Ph.D.}
+% Supervisor (adviser / mentor)
+\supervisor{Kenichi Hatakeyama, Ph.D.}
 \supervisorTitle{Advisor}
 
 %  Readers (committee members)
-\readerOne{Your A. Reader, Ph.D.}
-\readerTwo{U. Another Reader, Psy.D.}
-\readerThree{J. J. J. Heimer-Schmidt, M.D.}
-\readerFour{C. J. Schmidty, Ph.D.}
-%\readerFive{Silly Billy, Ph.D.}
+%\readerOne{Kenichi Hatakeyama, Ph.D.}
+\readerOne{Jay Dittmann, Ph.D.}
+\readerTwo{Gerald Cleaver, Ph.D.}
+\readerThree{Howard Lee, Ph.D.}
+\readerFour{Kevin Pinney, Ph.D.}
+
+%%%%%%%%%%
+\input{ptdr-definitions}
+\newcommand{\nbjets}{\ensuremath{N_{\PQb}}\xspace}
+\newcommand{\njets}{\ensuremath{N_{\text{j}}}\xspace}
+\newcommand{\ntops}{\ensuremath{N_{\PQt}}\xspace}
+\newcommand{\MTTwo}{\ensuremath{m_{\text{T2}}}\xspace}
+\newcommand{\mt}{\ensuremath{m_{\text{T}}}\xspace}
+\newcommand{\htmiss}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
+\newcommand{\met}{\ptmiss}
+\newcommand{\metv}{\ptvecmiss}
+\newcommand{\znunu}{\ensuremath{\cPZ\to\PGn\PAGn}\xspace}
+\newcommand{\znunujets}{\ensuremath{\cPZ(\PGn\PAGn)}\text{+jets}\xspace}
+\newcommand{\Znunujets}{\znunujets}
+\newcommand{\zll}{\ensuremath{\cPZ\to\ell\ell}}
+\newcommand{\zjets}{{{\cPZ}\text{+jets}}\xspace}
+\newcommand{\wjets}{{{\PW}\text{+jets}}\xspace}
+\newcommand{\stopq}{\PSQt}
+\newcommand{\gluino}{\PSg}
+\newcommand{\topq}{\cPqt}
+\newcommand{\lsp}{\PSGczDo}
+\newcommand{\mlsp}{\ensuremath{m_{\lsp}}\xspace}
+\newcommand{\qqprimebar}{\ensuremath{\PQq\PAQq^\prime}\xspace}
+\newcommand{\ttbarW}{\ensuremath{\ttbar\PW}\xspace}
+\newcommand{\ttbarZ}{\ensuremath{\ttbar\cPZ}\xspace}
+\newcommand{\njetsisr}{\ensuremath{N_{\text{jet}}^{\text{ISR}}}\xspace}
+%KH
+\newcommand{\PW}{\ensuremath{\cmsSymbolFace{W}}\xspace} % use prime like pennames2
+\newcommand{\GenMET}{\ensuremath{\mbox{gen-}\ptmiss}\xspace}
+\newcommand{\RecoMET}{\ensuremath{\mbox{reco-}\ptmiss}\xspace}
+%%%%%%%%%%
+
 
 % Abstract
-\abstract{This is the abstract. Lorem ipsum dolor sit amet, consectetur
+\abstract{
+This is the abstract. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit. Pellentesque tempus vitae turpis id lobortis. Curabitur semper
 lacus sapien, eget accumsan dolor posuere ac. Phasellus a leo varius, ultrices
 nibh et, convallis urna. Proin in libero scelerisque velit suscipit fringilla.
@@ -51,18 +104,25 @@ Cras quis erat sed nunc blandit dapibus ut eget libero. Cras malesuada tortor ut
 dolor tempor tincidunt. Morbi vel nulla vitae felis mollis scelerisque eget in
 mauris. Phasellus ipsum diam, vehicula egestas volutpat auctor, malesuada
 consequat elit. Nunc posuere risus eget orci vulputate, eget ullamcorper ante
-auctor.}
+auctor.
+}
+
 
 % Acknowledgments (optional)
-\acknowledgements{I want to express my great appreciation to several people.
+\acknowledgements{
+I want to express my great appreciation to several people.
 Aenean vulputate, est eget tempor dignissim, massa magna dignissim nulla, quis
 pharetra nulla libero ac libero. Cras id ornare augue. Nunc auctor nunc at dolor
 mattis suscipit. Vestibulum eu fringilla est. Morbi elementum varius ornare.
 Nulla vitae nibh sed lectus posuere tincidunt. Praesent sed dignissim turpis.
-Nulla euismod dolor nec nulla ornare blandit.}
+Nulla euismod dolor nec nulla ornare blandit.
+}
 
 % Dedication (optional)
-\dedication{\it Pour la rose qui fait important le temps qu'on perd}
+\dedication{\it Pour la rose qui fait important le temps qu'on perd.}
+
+% List of Acronyms (optional)
+\makeListOfAcronyms
 
 % List of figures (optional)
 \makeListOfFigures
@@ -72,30 +132,37 @@ Nulla euismod dolor nec nulla ornare blandit.}
 
 % Document body
 \begin{document}
-	\pdfbookmark[-1]{CONTENT}{bookmark:Content}  % Top level bookmark to hold all chapters
+\pdfbookmark[-1]{CONTENT}{bookmark:Content}  % Top level bookmark to hold all chapters
 
-    %Help format to graduate school requirements.
-    \setlength{\belowdisplayskip}{1ex} \setlength{\belowdisplayshortskip}{1ex}
-    \setlength{\abovedisplayskip}{1ex} \setlength{\abovedisplayshortskip}{1ex}
+% Help format to graduate school requirements.
+\setlength{\belowdisplayskip}{1ex} \setlength{\belowdisplayshortskip}{1ex}
+\setlength{\abovedisplayskip}{1ex} \setlength{\abovedisplayshortskip}{1ex}
 
-	% Chapters
-	\include{ch1}
-	\include{ch2}
-	\include{ch3}
-	\include{ch4}
-	\include{ch5}
+% Chapters
+\include{ch0}
+\include{ch1}
+\include{ch2}
+\include{ch3}
+\include{ch4}
+%\include{ch5} %This may be superfluous at the moment. Top Tagger has been moved to ch6, and I've never produced the work for TTZ
+\include{ch6}
+\include{ch7}
 
-	% Appendices (optional)
-	% TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
-	\thesisAppendixPage
-	\begin{appendices}
-		\appendix % Vaclav Cibur compile fix
-		\include{appendixA}
-		\include{appendixB}
-	\end{appendices}
+% Appendices (optional)
+% TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
+\thesisAppendixPage
+\begin{appendices}
+  \appendix % Vaclav Cibur compile fix
+  \include{appendixA}
+  \include{appendixB}
+  \include{appendixC}
+\end{appendices}
 
-	% Bibliography
-	\bibliographystyle{chicago} % or whatever style your department uses
-	\bibliography{thesis}
+% Bibliography
+%\bibliographystyle{chicago} % or whatever style your department uses
+%\bibliographystyle{ieeetr} % or whatever style your department uses
+%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtranBaylorPhys}
+\bibliography{thesis}
 
 \end{document}
