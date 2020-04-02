@@ -1,7 +1,9 @@
-baylor-cs-thesis
+baylor-physics-dissertation
 ================
 
-Template for creating a Master's Thesis with LaTeX for Baylor's computer science program.
+Template for creating a Dissertation with LaTeX for a Ph.D. in Physics at Baylor University.
+
+This template was originally used to create a Thesis for a Master of Computer Science, which is why the name Thesis often appears instead of Dissertation.
 
 ##### FAQ
 
