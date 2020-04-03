@@ -1,4 +1,4 @@
-%% Editted by Kenichi Hatakeya based on IEEEtran.bst
+%% Editted by Kenichi Hatakeyama based on IEEEtran.bst
 %% based on: https://tex.stackexchange.com/questions/67444/doi-in-ieeetran-bibliography
 %% plus some tweaks for "collaboration", "url" and tech report.
 %%
