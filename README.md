@@ -16,3 +16,7 @@ Template for creating a Dissertation with LaTeX for a Ph.D. in Physics at Baylor
   * This template previously used the style package "chicago", which does that by _\shortcite_. More info at http://ctan.math.washington.edu/tex-archive/biblio/bibtex/contrib/chicago/chicago.sty
 * My links to chapters and sections are not clickable, why?
   * This issue was solved by adding \usepackage{hyperref}. However, that caused problems with appendicies. Adding \appendix before actually including them seem to solve the issue.
+* How do I get rid of the red boxes on my table of contents links as required by Baylor?
+  * Use `\usepackage[hyperfootnotes=false, hidelinks=true]{hyperref}`
+  * See tip here: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
+  * The real question is why are these boxes there by default...
