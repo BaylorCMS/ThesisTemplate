@@ -13,32 +13,36 @@
 
 % Optional additional packages
 \usepackage{graphicx}
+\usepackage{epstopdf}
 \usepackage{amsmath}
 \usepackage{chicago}
 \usepackage{lipsum} % Because this comes with a demo
-\usepackage{hyperref}  % for workin links and bookmarks (alexsalo), and can help make references to other chapters and sections.
-\usepackage[capitalise]{cleveref}  % used to format references to ranges of references.
-\usepackage{bookmark}  % faster bookmarks management (alexsalo)
+\usepackage[hang, flushmargin, symbol]{footmisc}
+\usepackage[hyperfootnotes=false, hidelinks=true]{hyperref}  % for workin links and bookmarks (alexsalo)
+\usepackage[capitalise,nameinlink]{cleveref}  % used to format references to ranges of references.
+\usepackage{bookmark}  % faster bookmarks manegment (alexsalo)
 \usepackage{ifthen}
 \usepackage[binary-units]{siunitx} %Easier use of scientific notation (Check also CMS defined units)
 \usepackage{topcapt} %This lets us put the table caption at the top using \topcaption
-\usepackage{amssymb} %This is for the checkmark symbol
-%\usepackage[nomargin,inline,marginclue,draft]{fixme}
+\usepackage{amssymb}
 \usepackage{acronym} %This is used to create the List of acronyms
 \usepackage{cite}
-\usepackage[hang,flushmargin]{footmisc}
-
-% KH: fixme/fxnote using the todonotes package.
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage{slashed}
+\usepackage{pdfpages}
 \usepackage[textsize=footnotesize,textwidth=2.7cm]{todonotes}
+\usepackage{footnotebackref}
+
+%special commands
+%\setlength{\marginparwidth}{4cm}
 \newcommand{\tinytodo}[2][]
 {\todo[caption={#2}, #1]{\renewcommand{\baselinestretch}{0.8}\selectfont#2\par}}
 \newcommand{\fxnote}[1]{\tinytodo{#1}}
-
-% KH: making Chapter & Section from autoref capitalized
+%\renewcommand{\footnote}[2][3]{\footnotemark[#1]\footnotetext[#1]{#2}}
 \renewcommand{\chapterautorefname}{Chapter}
 \renewcommand{\sectionautorefname}{Section}
 \renewcommand{\subsectionautorefname}{Section}
-\newcommand{\crefrangeconjunction}{--}
 
 % Thesis parameters
 \title{Baylor University Thesis \LaTeX\ Template (Replace with Your Thesis Title)}
@@ -65,14 +69,15 @@
 \readerThree{J. J. J. Heimer-Schmidt, M.D.}
 \readerFour{C. J. Schmidty, Ph.D.}
 
-%%%%%%%%%%
-\input{ptdr-definitions.tex}
+% CMS specific commands
+\input{ptdr-definitions}
 \newcommand{\nbjets}{\ensuremath{N_{\PQb}}\xspace}
 \newcommand{\njets}{\ensuremath{N_{\text{j}}}\xspace}
 \newcommand{\ntops}{\ensuremath{N_{\PQt}}\xspace}
 \newcommand{\MTTwo}{\ensuremath{m_{\text{T2}}}\xspace}
 \newcommand{\mt}{\ensuremath{m_{\text{T}}}\xspace}
 \newcommand{\htmiss}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
+\newcommand{\mbl}{\ensuremath{M(l,b)}\xspace}
 \newcommand{\met}{\ptmiss}
 \newcommand{\metv}{\ptvecmiss}
 \newcommand{\znunu}{\ensuremath{\cPZ\to\PGn\PAGn}\xspace}
@@ -90,12 +95,10 @@
 \newcommand{\ttbarW}{\ensuremath{\ttbar\PW}\xspace}
 \newcommand{\ttbarZ}{\ensuremath{\ttbar\cPZ}\xspace}
 \newcommand{\njetsisr}{\ensuremath{N_{\text{jet}}^{\text{ISR}}}\xspace}
-%KH
 \newcommand{\PW}{\ensuremath{\cmsSymbolFace{W}}\xspace} % use prime like pennames2
 \newcommand{\GenMET}{\ensuremath{\mbox{gen-}\ptmiss}\xspace}
 \newcommand{\RecoMET}{\ensuremath{\mbox{reco-}\ptmiss}\xspace}
-%%%%%%%%%%
-
+\newcommand{\orderof}{\ensuremath{\mathcal{O}}}
 
 % Abstract
 \abstract{\input{abstract.tex}}
