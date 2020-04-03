@@ -334,13 +334,13 @@
                 \doublespacing
 		by \\
 		\thesisAuthorName, \thesisHolding \\
-		A Dissertation \\
+		\thesisProject \\
 		Approved by the \thesisDepartment
 		\thesisSignature{\thesisDepartmentChair, Interim Chairperson}{97mm}
 	\\
 	\vspace{0.1in}
 	\singlespacing
-    	Submitted to the Graduate Faculty of\\
+    	Submitted to the Graduate Faculty of \\
 	Baylor University in Partial Fulfillment of the \\
 	Requirements for the Degree \\
 	of \\
@@ -351,7 +351,7 @@
 	\doublespacing
 	{
 	  \addtolength{\leftskip}{-2.25in}
-      		Approved by the Dissertation Committee
+      		Approved by the \thesisCommittee
      		\thesisSignature{\thesisMentor, Chairperson}{80mm}
      		\thesisSignature{\thesisReaderOne}{80mm}
      		\thesisSignature{\thesisReaderTwo}{80mm}
@@ -608,6 +608,8 @@
 % Expected parameters
 \renewcommand*{\title}[1]{\gdef\thesisTitle{#1}}
 \newcommand*{\degree}[1]{\gdef\thesisDegree{#1}}
+\newcommand*{\project}[1]{\gdef\thesisProject{#1}}
+\newcommand*{\committee}[1]{\gdef\thesisCommittee{#1}}
 \newcommand*{\supervisor}[1]{\gdef\thesisMentor{#1}}
 \newcommand*{\supervisorTitle}[1]{\gdef\thesisMentorTitle{#1}}
 \newcommand*{\seeking}[1]{\gdef\thesisSeeking{#1}}

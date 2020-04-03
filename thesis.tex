@@ -16,9 +16,9 @@
 \usepackage{amsmath}
 \usepackage{chicago}
 \usepackage{lipsum} % Because this comes with a demo
-\usepackage{hyperref}  % for workin links and bookmarks (alexsalo), and can help make refences to other chapters and sections.
+\usepackage{hyperref}  % for workin links and bookmarks (alexsalo), and can help make references to other chapters and sections.
 \usepackage[capitalise]{cleveref}  % used to format references to ranges of references.
-\usepackage{bookmark}  % faster bookmarks manegment (alexsalo)
+\usepackage{bookmark}  % faster bookmarks management (alexsalo)
 \usepackage{ifthen}
 \usepackage[binary-units]{siunitx} %Easier use of scientific notation (Check also CMS defined units)
 \usepackage{topcapt} %This lets us put the table caption at the top using \topcaption
@@ -46,6 +46,8 @@
 \holding{B.S., M.S.}
 \seeking{Ph.D.}
 \degree{Doctor of Philosophy}
+\project{A Dissertation}
+\committee{Dissertation Committee}
 \date{August 2020}
 
 % Administration
@@ -64,7 +66,7 @@
 \readerFour{C. J. Schmidty, Ph.D.}
 
 %%%%%%%%%%
-\input{ptdr-definitions}
+\input{ptdr-definitions.tex}
 \newcommand{\nbjets}{\ensuremath{N_{\PQb}}\xspace}
 \newcommand{\njets}{\ensuremath{N_{\text{j}}}\xspace}
 \newcommand{\ntops}{\ensuremath{N_{\PQt}}\xspace}
@@ -96,28 +98,10 @@
 
 
 % Abstract
-\abstract{
-This is the abstract. Lorem ipsum dolor sit amet, consectetur
-adipiscing elit. Pellentesque tempus vitae turpis id lobortis. Curabitur semper
-lacus sapien, eget accumsan dolor posuere ac. Phasellus a leo varius, ultrices
-nibh et, convallis urna. Proin in libero scelerisque velit suscipit fringilla.
-Cras quis erat sed nunc blandit dapibus ut eget libero. Cras malesuada tortor ut
-dolor tempor tincidunt. Morbi vel nulla vitae felis mollis scelerisque eget in
-mauris. Phasellus ipsum diam, vehicula egestas volutpat auctor, malesuada
-consequat elit. Nunc posuere risus eget orci vulputate, eget ullamcorper ante
-auctor.
-}
-
+\abstract{\input{abstract.tex}}
 
 % Acknowledgments (optional)
-\acknowledgements{
-I want to express my great appreciation to several people.
-Aenean vulputate, est eget tempor dignissim, massa magna dignissim nulla, quis
-pharetra nulla libero ac libero. Cras id ornare augue. Nunc auctor nunc at dolor
-mattis suscipit. Vestibulum eu fringilla est. Morbi elementum varius ornare.
-Nulla vitae nibh sed lectus posuere tincidunt. Praesent sed dignissim turpis.
-Nulla euismod dolor nec nulla ornare blandit.
-}
+\acknowledgements{\input{acknowledgements.tex}}
 
 % Dedication (optional)
 \dedication{\it Pour la rose qui fait important le temps qu'on perd.}
@@ -139,12 +123,14 @@ Nulla euismod dolor nec nulla ornare blandit.
 \setlength{\belowdisplayskip}{1ex} \setlength{\belowdisplayshortskip}{1ex}
 \setlength{\abovedisplayskip}{1ex} \setlength{\abovedisplayshortskip}{1ex}
 
+% WARNING: \include adds the file extension ".tex" by default; do not put ".tex" extension on file names
+
 % Chapters
-\include{ch1}
-\include{ch2}
-\include{ch3}
-\include{ch4}
-\include{ch5}
+\include{chapters/ch1}
+\include{chapters/ch2}
+\include{chapters/ch3}
+\include{chapters/ch4}
+\include{chapters/ch5}
 
 % Appendices (optional)
 % TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
@@ -157,7 +143,7 @@ Nulla euismod dolor nec nulla ornare blandit.
 \end{appendices}
 
 % Bibliography
-% Use IEEEtranBaylorPhys; based on IEEEtran, modified by Kenichi Hatakeya
+% Use IEEEtranBaylorPhys; based on IEEEtran, modified by Kenichi Hatakeyama
 \bibliographystyle{IEEEtranBaylorPhys}
 \bibliography{thesis}
 
