@@ -19,7 +19,7 @@ COPY = if test -r $(<:%.tex=%.toc); then cp $(<:%.tex=%.toc) $(<:%.tex=%.toc.bak
 
 all: $(TARGET)
 
-$(TARGET): %.pdf : %.tex *.tex
+$(TARGET): %.pdf : %.tex *.tex chapters/*.tex
 	$(COPY);$(LATEX) $<
 	egrep -q $(MAKEIDX) $< && ($(MAKEINDEX) $(<:%.tex=%);$(COPY);$(LATEX) $<) ; true
 	egrep -c $(RERUNBIB) $(<:%.tex=%.log) && ($(BIBTEX) $(<:%.tex=%);$(COPY);$(LATEX) $<) ; true
