@@ -34,15 +34,24 @@
 \usepackage[textsize=footnotesize,textwidth=2.7cm]{todonotes}
 \usepackage{footnotebackref}
 
+%KC: Graduate school asks that references to chapters use words for the numbers. the fmtcount package translates number to words. This is really rather hacky. If the formated label is an integer according to xstring, then we set the hackyCounter to have that label's value, then print it using \Numberstring
+\usepackage{fmtcount, xstring}
+
+\newcount\hackyCounter
+\newcounter{hackyCounter}
+
+\creflabelformat{chapter}{#2\IfInteger{#1}{\setcounter{hackyCounter}{#1}\Numberstring{hackyCounter}}{#1}#3}
+
+
 %special commands
 %\setlength{\marginparwidth}{4cm}
 \newcommand{\tinytodo}[2][]
 {\todo[caption={#2}, #1]{\renewcommand{\baselinestretch}{0.8}\selectfont#2\par}}
 \newcommand{\fxnote}[1]{\tinytodo{#1}}
 %\renewcommand{\footnote}[2][3]{\footnotemark[#1]\footnotetext[#1]{#2}}
-\renewcommand{\chapterautorefname}{Chapter}
-\renewcommand{\sectionautorefname}{Section}
-\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\chapterautorefname}{\mbox{Chapter}}
+\renewcommand{\sectionautorefname}{\mbox{Section}}
+\renewcommand{\subsectionautorefname}{\mbox{Section}}
 
 % Thesis parameters
 \title{Baylor University Thesis \LaTeX\ Template (Replace with Your Thesis Title)}
@@ -136,6 +145,7 @@
 \include{chapters/ch3}
 \include{chapters/ch4}
 \include{chapters/ch5}
+\include{chapters/ch6}
 
 % Appendices (optional)
 % TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
