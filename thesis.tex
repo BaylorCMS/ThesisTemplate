@@ -142,25 +142,42 @@
 \setlength{\abovedisplayskip}{1ex} \setlength{\abovedisplayshortskip}{1ex}
 
 % WARNING: \include adds the file extension ".tex" by default; do not put ".tex" extension on file names when using \include
+% WARNING: \include adds whitespace (\clearpage) before and after input; use \input if you don't want additional whitespace
+% https://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
 
 % Chapters
-\include{chapters/ch1}
-\include{chapters/ch2}
-\include{chapters/ch3}
-\include{chapters/ch4}
-\include{chapters/ch5}
-\include{chapters/ch6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\label{chapter:ch1}
+\input{chapters/ch1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{This is a Very Long Header Title Which Will Span Multiple Lines on the Page and the Contents}
+\label{chapter:ch2}
+\input{chapters/ch2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Footnotes and Citations}
+\label{chapter:ch3}
+\input{chapters/ch3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Floats}
+\label{chapter:ch4}
+\input{chapters/ch4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Lists and Enumerations}
+\label{chapter:ch5}
+\input{chapters/ch5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusion}
+\label{chapter:ch6}
+\input{chapters/ch6}
 
 % Appendices (optional)
-% TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
-% \thesisAppendixPage
-% \begin{appendices}
-%   \appendix % Vaclav Cibur compile fix
-%   \include{appendixA}
-%   \include{appendixB}
-%   \include{appendixC}
-% \end{appendices}
-
 \multipleappendices % Change to \oneappendix if you have only one appendix!
 
 \begin{appendices}
