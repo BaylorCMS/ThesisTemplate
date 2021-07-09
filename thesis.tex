@@ -7,17 +7,19 @@
 \documentclass
 [
 	%short,	% omit front matter
-	%draft, 	% draft heading, don't load graphics, etc.
+	%draft, % draft heading, don't load graphics, etc.
 ]
 {thesis}
 
 % Optional additional packages
+\usepackage{appendix}
+\usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{amsmath}
 \usepackage{chicago}
 \usepackage{lipsum} % Because this comes with a demo
-\usepackage[hang, flushmargin, symbol]{footmisc}
+%\usepackage[hang, flushmargin, symbol]{footmisc}
 \usepackage[hyperfootnotes=false, hidelinks=true]{hyperref}  % for workin links and bookmarks (alexsalo)
 \usepackage[capitalise,nameinlink]{cleveref}  % used to format references to ranges of references.
 \usepackage{bookmark}  % faster bookmarks manegment (alexsalo)
@@ -26,13 +28,16 @@
 \usepackage{topcapt} %This lets us put the table caption at the top using \topcaption
 \usepackage{amssymb}
 \usepackage{acronym} %This is used to create the List of acronyms
-\usepackage{cite}
+\usepackage[nobreak]{cite}
 \usepackage{xspace}
 \usepackage{xcolor}
 \usepackage{slashed}
 \usepackage{pdfpages}
 \usepackage[textsize=footnotesize,textwidth=2.7cm]{todonotes}
 \usepackage{footnotebackref}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{tabu}
 
 %KC: Graduate school asks that references to chapters use words for the numbers. the fmtcount package translates number to words. This is really rather hacky. If the formated label is an integer according to xstring, then we set the hackyCounter to have that label's value, then print it using \Numberstring
 \usepackage{fmtcount, xstring}
@@ -42,12 +47,16 @@
 
 \creflabelformat{chapter}{#2\IfInteger{#1}{\setcounter{hackyCounter}{#1}\Numberstring{hackyCounter}}{#1}#3}
 
+% using cleveref for appendices
+% https://tex.stackexchange.com/questions/119513/cleveref-and-appendix-packages-appendix-referenced-as-section
+\AtBeginEnvironment{appendices}{\crefalias{chapter}{appendix}}
 
 %special commands
 %\setlength{\marginparwidth}{4cm}
 \newcommand{\tinytodo}[2][]
 {\todo[caption={#2}, #1]{\renewcommand{\baselinestretch}{0.8}\selectfont#2\par}}
 \newcommand{\fxnote}[1]{\tinytodo{#1}}
+\newcommand{\fixme}[1]{{\color{red}{FIXME: #1}}}
 %\renewcommand{\footnote}[2][3]{\footnotemark[#1]\footnotetext[#1]{#2}}
 \renewcommand{\chapterautorefname}{\mbox{Chapter}}
 \renewcommand{\sectionautorefname}{\mbox{Section}}
@@ -56,43 +65,39 @@
 % Thesis parameters
 \title{Baylor University Thesis \LaTeX\ Template (Replace with Your Thesis Title)}
 \author{Your Full Name}
-\holding{B.S., M.S.}
+\holding{M.S., B.S.}
 \seeking{Ph.D.}
 \degree{Doctor of Philosophy}
 \project{A Dissertation}
-\committee{Dissertation Committee}
 \date{August 2020}
 
 % Administration
-\graduateDean{J. Larry Lyon, Ph.D.}
+\graduateDean{J.~Larry Lyon, Ph.D.}
 \department{Department of Physics}
 \departmentChair{Dwight P. Russell, Ph.D.}
+\departmentChairTitle{Interim Chairperson}
 
 % Supervisor (advisor / mentor)
-\supervisor{Name O. Supervisor, Ph.D.}
-\supervisorTitle{Advisor}
+\supervisor{Name O.~Supervisor, Ph.D.}
+\supervisorRole{Advisor}
 
 %  Readers (committee members)
-\readerOne{Your A. Reader, Ph.D.}
-\readerTwo{U. Another Reader, Psy.D.}
-\readerThree{J. J. J. Heimer-Schmidt, M.D.}
-\readerFour{C. J. Schmidty, Ph.D.}
+\committee{Dissertation Committee}
+\readerOne{Name O.~Supervisor, Ph.D., Chairperson}
+\readerTwo{Your A. Reader, Ph.D.}
+\readerThree{U. Another Reader, Psy.D.}
+\readerFour{J. J. J. Heimer-Schmidt, M.D.}
+\readerFive{C. J. Schmidty, Ph.D.}
 
 % CMS specific commands
 \input{ptdr-definitions}
 \newcommand{\nbjets}{\ensuremath{N_{\PQb}}\xspace}
 \newcommand{\njets}{\ensuremath{N_{\text{j}}}\xspace}
 \newcommand{\ntops}{\ensuremath{N_{\PQt}}\xspace}
-\newcommand{\MTTwo}{\ensuremath{m_{\text{T2}}}\xspace}
-\newcommand{\mt}{\ensuremath{m_{\text{T}}}\xspace}
 \newcommand{\htmiss}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
 \newcommand{\mbl}{\ensuremath{M(l,b)}\xspace}
-\newcommand{\met}{\ptmiss}
-\newcommand{\metv}{\ptvecmiss}
-\newcommand{\znunu}{\ensuremath{\cPZ\to\PGn\PAGn}\xspace}
 \newcommand{\znunujets}{\ensuremath{\cPZ(\PGn\PAGn)}\text{+jets}\xspace}
 \newcommand{\Znunujets}{\znunujets}
-\newcommand{\zll}{\ensuremath{\cPZ\to\ell\ell}}
 \newcommand{\zjets}{{{\cPZ}\text{+jets}}\xspace}
 \newcommand{\wjets}{{{\PW}\text{+jets}}\xspace}
 \newcommand{\stopq}{\PSQt}
@@ -104,7 +109,6 @@
 \newcommand{\ttbarW}{\ensuremath{\ttbar\PW}\xspace}
 \newcommand{\ttbarZ}{\ensuremath{\ttbar\cPZ}\xspace}
 \newcommand{\njetsisr}{\ensuremath{N_{\text{jet}}^{\text{ISR}}}\xspace}
-\newcommand{\PW}{\ensuremath{\cmsSymbolFace{W}}\xspace} % use prime like pennames2
 \newcommand{\GenMET}{\ensuremath{\mbox{gen-}\ptmiss}\xspace}
 \newcommand{\RecoMET}{\ensuremath{\mbox{reco-}\ptmiss}\xspace}
 \newcommand{\orderof}{\ensuremath{\mathcal{O}}}
@@ -138,23 +142,58 @@
 \setlength{\abovedisplayskip}{1ex} \setlength{\abovedisplayshortskip}{1ex}
 
 % WARNING: \include adds the file extension ".tex" by default; do not put ".tex" extension on file names when using \include
+% WARNING: \include adds whitespace (\clearpage) before and after input; use \input if you don't want additional whitespace
+% https://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
 
 % Chapters
-\include{chapters/ch1}
-\include{chapters/ch2}
-\include{chapters/ch3}
-\include{chapters/ch4}
-\include{chapters/ch5}
-\include{chapters/ch6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\label{chapter:ch1}
+\input{chapters/ch1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{This is a Very Long Header Title Which Will Span Multiple Lines on the Page and the Contents}
+\label{chapter:ch2}
+\input{chapters/ch2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Footnotes and Citations}
+\label{chapter:ch3}
+\input{chapters/ch3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Floats}
+\label{chapter:ch4}
+\input{chapters/ch4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Lists and Enumerations}
+\label{chapter:ch5}
+\input{chapters/ch5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusion}
+\label{chapter:ch6}
+\input{chapters/ch6}
 
 % Appendices (optional)
-% TODO: make the thesisAppendixPage automagic if the \begin{appendices} exists
-\thesisAppendixPage
+\multipleappendices % Change to \oneappendix if you have only one appendix!
+
 \begin{appendices}
-  \appendix % Vaclav Cibur compile fix
-  \include{appendixA}
-  \include{appendixB}
-  \include{appendixC}
+
+\chapter{Tables}
+\label{appendix:appendixA}
+\input{appendices/appendixA}
+
+\chapter{Diagrams}
+\label{appendix:appendixB}
+\input{appendices/appendixB}
+
+\chapter{Plots}
+\label{appendix:appendixC}
+\input{appendices/appendixC}
+
 \end{appendices}
 
 % Bibliography

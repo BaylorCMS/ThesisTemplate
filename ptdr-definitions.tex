@@ -22,6 +22,7 @@
 \newcommand {\ie}{\mbox{i.e.}\xspace}     %i.e.
 \newcommand {\eg}{\mbox{e.g.}\xspace}     %e.g.
 \newcommand {\etc}{\mbox{etc.}\xspace}     %etc.
+\newcommand {\aka}{\mbox{aka.}\xspace}     %aka.
 \newcommand {\vs}{\mbox{\sl vs.}\xspace}      %vs.
 \newcommand {\mdash}{\ensuremath{\mathrm{-}}} % for use within formulas
 \providecommand {\NA}{\ensuremath{\text{---}}}    % for Not applicable (or available). Needs to be renewcommanded for APS to \cdots
@@ -90,41 +91,49 @@
 
 \newcommand{\de}{\ensuremath{^\circ}}
 \newcommand{\ten}[1]{\ensuremath{\times \text{10}^\text{#1}}}
-\newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
-\newcommand{\mum}{\ensuremath{\,\mu\text{m}}\xspace}
-\newcommand{\micron}{\ensuremath{\,\mu\text{m}}\xspace}
-\newcommand{\cm}{\ensuremath{\,\text{cm}}\xspace}
-\newcommand{\mm}{\ensuremath{\,\text{mm}}\xspace}
-\newcommand{\mus}{\ensuremath{\,\mu\text{s}}\xspace}
-\newcommand{\keV}{\ensuremath{\,\text{ke\hspace{-.08em}V}}\xspace}
-\newcommand{\MeV}{\ensuremath{\,\text{Me\hspace{-.08em}V}}\xspace}
+\newcommand{\unit}[1]{\ensuremath{\text{\ #1}}\xspace}
+\newcommand{\mum}{\ensuremath{\ \mu\text{m}}\xspace}
+\newcommand{\micron}{\ensuremath{\ \mu\text{m}}\xspace}
+\newcommand{\cm}{\ensuremath{\ \text{cm}}\xspace}
+\newcommand{\mm}{\ensuremath{\ \text{mm}}\xspace}
+\newcommand{\second}{\ensuremath{\ \text{s}}\xspace}
+\newcommand{\mus}{\ensuremath{\ \mu\text{s}}\xspace}
+\newcommand{\keV}{\ensuremath{\ \text{ke\hspace{-.08em}V}}\xspace}
+\newcommand{\MeV}{\ensuremath{\ \text{Me\hspace{-.08em}V}}\xspace}
 \newcommand{\MeVns}{\ensuremath{\text{Me\hspace{-.08em}V}}\xspace} % no leading thinspace
-\newcommand{\GeV}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
+\newcommand{\GeV}{\ensuremath{\ \text{Ge\hspace{-.08em}V}}\xspace}
 \newcommand{\GeVns}{\ensuremath{\text{Ge\hspace{-.08em}V}}\xspace} % no leading thinspace
 \newcommand{\gev}{\GeV}
-\newcommand{\TeV}{\ensuremath{\,\text{Te\hspace{-.08em}V}}\xspace}
+\newcommand{\TeV}{\ensuremath{\ \text{Te\hspace{-.08em}V}}\xspace}
 \newcommand{\TeVns}{\ensuremath{\text{Te\hspace{-.08em}V}}\xspace} % no leading thinspace
-\newcommand{\PeV}{\ensuremath{\,\text{Pe\hspace{-.08em}V}}\xspace}
-\newcommand{\keVc}{\ensuremath{{\,\text{ke\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
-\newcommand{\MeVc}{\ensuremath{{\,\text{Me\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
-\newcommand{\GeVc}{\ensuremath{{\,\text{Ge\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
+\newcommand{\PeV}{\ensuremath{\ \text{Pe\hspace{-.08em}V}}\xspace}
+\newcommand{\keVc}{\ensuremath{{\ \text{ke\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
+\newcommand{\MeVc}{\ensuremath{{\ \text{Me\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
+\newcommand{\GeVc}{\ensuremath{{\ \text{Ge\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
 \newcommand{\GeVcns}{\ensuremath{{\text{Ge\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace} % no leading thinspace
-\newcommand{\TeVc}{\ensuremath{{\,\text{Te\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
-\newcommand{\keVcc}{\ensuremath{{\,\text{ke\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
-\newcommand{\MeVcc}{\ensuremath{{\,\text{Me\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
-\newcommand{\GeVcc}{\ensuremath{{\,\text{Ge\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
+\newcommand{\TeVc}{\ensuremath{{\ \text{Te\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c}}\xspace}
+\newcommand{\keVcc}{\ensuremath{{\ \text{ke\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
+\newcommand{\MeVcc}{\ensuremath{{\ \text{Me\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
+\newcommand{\GeVcc}{\ensuremath{{\ \text{Ge\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
 \newcommand{\GeVccns}{\ensuremath{{\text{Ge\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace} % no leading thinspace
-\newcommand{\TeVcc}{\ensuremath{{\,\text{Te\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
+\newcommand{\TeVcc}{\ensuremath{{\ \text{Te\hspace{-.08em}V\hspace{-0.16em}/\hspace{-0.08em}}c^\text{2}}}\xspace}
 
-\newcommand{\pbinv} {\mbox{\ensuremath{\,\text{pb}^\text{$-$1}}}\xspace}
-\newcommand{\fbinv} {\mbox{\ensuremath{\,\text{fb}^\text{$-$1}}}\xspace}
-\newcommand{\nbinv} {\mbox{\ensuremath{\,\text{nb}^\text{$-$1}}}\xspace}
-\newcommand{\mubinv} {\ensuremath{\,\mu\mathrm{b}^{-1}}\xspace}
-\newcommand{\mbinv} {\ensuremath{\,\mathrm{mb}^{-1}}\xspace}
-\newcommand{\percms}{\ensuremath{\,\text{cm}^\text{$-$2}\,\text{s}^\text{$-$1}}\xspace}
+\newcommand{\mb}{\ensuremath{\ \text{mb}}\xspace}
+\newcommand{\mub}{\ensuremath{\ \mu\text{b}}\xspace}
+\newcommand{\nbarn}{\ensuremath{\ \text{nb}}\xspace}
+\newcommand{\pb}{\ensuremath{\ \text{pb}}\xspace}
+\newcommand{\fb}{\ensuremath{\ \text{fb}}\xspace}
+\newcommand{\mbinv}{\ensuremath{\ \text{mb}^{-1}}\xspace}
+\newcommand{\mubinv}{\ensuremath{\ \mu\text{b}^{-1}}\xspace}
+\newcommand{\nbinv}{\ensuremath{\ \text{nb}^{-1}}\xspace}
+\newcommand{\pbinv}{\ensuremath{\ \text{pb}^{-1}}\xspace}
+\newcommand{\fbinv}{\ensuremath{\ \text{fb}^{-1}}\xspace}
+\newcommand{\percms}{\ensuremath{\ \text{cm}^\text{$-$2}\ \text{s}^\text{$-$1}}\xspace}
 \newcommand{\lumi}{\ensuremath{\mathcal{L}}\xspace}
-\newcommand{\Lumi}{\ensuremath{\mathcal{L}}\xspace}%both upper and lower
-%
+\newcommand{\Lumi}{\lumi}
+\newcommand{\rate}{\ensuremath{\mathcal{R}}\xspace}
+\newcommand{\Rate}{\rate}
+
 % Need a convention here:
 \newcommand{\LvLow}  {\ensuremath{\mathcal{L}=\text{10}^\text{32}\,\text{cm}^\text{$-$2}\,\text{s}^\text{$-$1}}\xspace}
 \newcommand{\LLow}   {\ensuremath{\mathcal{L}=\text{10}^\text{33}\,\text{cm}^\text{$-$2}\,\text{s}^\text{$-$1}}\xspace}
@@ -134,9 +143,9 @@
 \newcommand{\hilumi} {\ensuremath{\mathcal{L}=\text{10}^\text{34}\,\text{cm}^\text{$-$2}\,\text{s}^\text{$-$1}}\xspace}
 
 % Physics symbols ...
-
 \newcommand{\PT}{\ensuremath{p_{\mathrm{T}}}\xspace}
-\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\pt}{\PT}
+\newcommand{\pT}{\PT}
 \newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
 \newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
 \newcommand{\et}{\ensuremath{E_{\mathrm{T}}}\xspace}
@@ -145,7 +154,8 @@
 \newcommand{\PTm}{\ensuremath{{p}_\mathrm{T}\hspace{-1.02em}/\kern 0.5em}\xspace}
 \newcommand{\PTslash}{\PTm}
 \newcommand{\ETm}{\ensuremath{E_{\mathrm{T}}^{\text{miss}}}\xspace}
-\newcommand{\MET}{\ETm}
+\newcommand{\MET}{\ensuremath{p^{\rm miss}_{\rm T}}\xspace}
+\newcommand{\METv}{\ensuremath{\vec{p}^{\rm miss}_{\rm T}}\xspace}
 \newcommand{\ETmiss}{\ETm}
 \newcommand{\ptmiss}{\ensuremath{\pt^\text{miss}}\xspace}
 \newcommand{\ETslash}{\ensuremath{E_{\mathrm{T}}\hspace{-1.1em}/\kern0.45em}\xspace}
@@ -156,6 +166,29 @@
 \newcommand{\sqrtsNN}{\ensuremath{\sqrt{\smash[b]{s_{_{\mathrm{NN}}}}}}\xspace}
 \newcommand{\mht}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
 \newcommand{\htvecmiss}{\ensuremath{\vec{H}_{\text{T}}^{\text{miss}}}\xspace}
+\newcommand{\dphi}{\ensuremath{\Delta\phi}\xspace}
+\newcommand{\MTTwo}{\ensuremath{m_{\text{T2}}}\xspace}
+\newcommand{\mt}{\ensuremath{m_{\mathrm{T}}}\xspace}
+\newcommand{\mT}{\mt}
+\newcommand{\Mt}{\mt}
+\newcommand{\MT}{\mt}
+\newcommand{\mtb}{\ensuremath{\mt^\mathrm{\PQb}}\xspace}
+\newcommand{\MTb}{\mtb}
+\newcommand{\mTb}{\mtb}
+\newcommand{\ptb}{\ensuremath{\pt^{\mathrm{\PQb}}}\xspace}
+\newcommand{\ptbonetwo}{\ensuremath{\pt^{\mathrm{\PQb}_{12}}}}
+\newcommand{\ptISR}{\ensuremath{\pt^{\text{ISR}}}\xspace}
+
+\newcommand{\metsig}{\ensuremath{\ptmiss/\sqrt{H_\mathrm{T}}}\xspace}
+\newcommand{\sipthreed}{{\tt SIP3D}\xspace}
+
+% aliases to existing commands
+\newcommand{\ptisr}{\ptISR}
+\newcommand{\Ht}{\HT}
+\newcommand{\met}{\MET}
+\newcommand{\metv}{\METv}
+\newcommand{\vMet}{\METv}
+\newcommand{\vmet}{\METv}
 
 % roman face derivative
 \newcommand{\dd}[2]{\ensuremath{\frac{\cmsSymbolFace{d} #1}{\cmsSymbolFace{d} #2}}}
@@ -186,7 +219,8 @@
 \providecommand{\Pagn}{\ensuremath{\overline{\nu}}} % generic neutrino
 \newcommand{\cPgg}{\ensuremath{\gamma}} % gamma
 \newcommand{\cPJgy}{\ensuremath{\cmsSymbolFace{J}\hspace{-.08em}/\hspace{-.14em}\psi}} % J/Psi (no mass)
-\newcommand{\cPZ}{\ensuremath{\cmsSymbolFace{Z}}} % plain Z (no superscript 0)
+\newcommand{\cPW}{\ensuremath{\cmsSymbolFace{W}}} % W, no xspace
+\newcommand{\cPZ}{\ensuremath{\cmsSymbolFace{Z}}} % plain Z (no superscript 0), no xspace
 \newcommand{\cPZpr}{\ensuremath{\cmsSymbolFace{Z}'}} % plain Z'
 \newcommand{\cPqt}{\ensuremath{\cmsSymbolFace{t}}} % t for t quark
 \newcommand{\cPqb}{\ensuremath{\cmsSymbolFace{b}}} % b for b quark
@@ -259,6 +293,9 @@
 \providecommand{\PSGt}{\ensuremath{\widetilde{\tau}}\xspace} % stau
 \providecommand{\PZ}{\ensuremath{\cmsSymbolFace{Z}}\xspace} % may have some confusion with the \xspace...
 \providecommand{\PZpr}{\ensuremath{\cmsSymbolFace{Z}'}\xspace} % plain Z' using prime
+\newcommand{\PW}{\ensuremath{\cmsSymbolFace{W}}\xspace} % use prime like pennames2
+\newcommand{\WW}{\ensuremath{\cmsSymbolFace{W}\cmsSymbolFace{W}}\xspace}
+\newcommand{\ZZ}{\ensuremath{\cmsSymbolFace{Z}\cmsSymbolFace{Z}}\xspace}
 %%KH \renewcommand{\PWpr}{\ensuremath{\cmsSymbolFace{W}'}\xspace} % use prime like pennames2
 \newcommand{\PWpr}{\ensuremath{\cmsSymbolFace{W}'}\xspace} % use prime like pennames2
 \providecommand{\PWmp}{\ensuremath{\cmsSymbolFace{W}^\mp}\xspace}
@@ -311,12 +348,24 @@
 \providecommand{\Pemp}{\ensuremath{\cmsSymbolFace{e}^\mp}\xspace}
 \providecommand{\PGmpm}{\ensuremath{\mu^\pm}\xspace}
 \providecommand{\PGmmp}{\ensuremath{\mu^\mp}\xspace} % not available in pennames2, AFAIK
+
 % for APS style tables
-%% \ifthenelse{\boolean{cms@external}}{%
-%% \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
-%% }{
-%% \newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
-%% }
+
+% \ifthenelse{\boolean{cms@external}}{
+% \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
+% }{
+% \newenvironment{scotch}[1]{\protect\centering\tabular{#1}}{\endtabular}
+% \newenvironment{turnpage}[1]{#1}{}
+% }
+
+% \ifthenelse{\boolean{cms@external}}{
+% \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
+% }{
+% \newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
+% }
+
+\newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline}{\hline\endtabular}
+
 % Other
 \newcommand{\MD}{\ensuremath{{M_\mathrm{D}}}\xspace}% ED mass
 \newcommand{\Mpl}{\ensuremath{{M_\mathrm{Pl}}}\xspace}% Planck mass
@@ -458,5 +507,82 @@
 \newcommand{\Lampp}{\ensuremath{\lambda''}\xspace}
 %
 \newcommand{\spinbd}[2]{\ensuremath{\bar{#1}_{\dot{#2}}}\xspace}
+
+
+%%%%%%% More definitions
+\newcommand\defRTDR{\ensuremath{ R2 = \sqrt{[\pi-\Delta\phi(J_{1},\mht) ]^2 +[\Delta\phi(J_{2},\mht) ]^2}    }}
+\newcommand\wpj{\ensuremath{\W + {\rm jets}}\xspace}
+\newcommand\zpj{\ensuremath{\Z + {\rm jets}}\xspace}
+\renewcommand{\ttbar}{\ensuremath{{\rm t\bar{t}}}\xspace}
+\renewcommand\qqbar{\ensuremath{{\rm q\bar{q}}}\xspace}
+\newcommand\ttbarMuNu{\ensuremath{\ttbar ( \mu \nu ) {\rm +jets}}\xspace}
+\newcommand\wtauhad{\ensuremath{\W \rightarrow \tau_{\rm h} \nu}\xspace}
+\newcommand\ttbarTAUHNu{\ensuremath{\ttbar \rightarrow \tau_{\rm h} \nu + {\rm jets}}\xspace}
+\newcommand\ttbarDITAUHNu{\ensuremath{\ttbar \rightarrow \tau_{\rm h} \nu + \tau_{\rm h} \nu + {\rm jets}}\xspace}
+\newcommand\ttbarMUTAUHNu{\ensuremath{\ttbar ( \mu \nu + \tau_{\mu} \nu) {\rm +jets}}\xspace}
+\newcommand\defMHT{\ensuremath{ {\rm MHT} = \mht = | - \sum_{i} \vec{p_{T} (jet_{i}) }|}}
+\newcommand{\ztautau}{\ensuremath{\Z \rightarrow \tau \tau}\xspace}
+\newcommand{\zmumu}{\ensuremath{\Z \rightarrow \mu^{+} \mu^{-}}\xspace}
+\newcommand{\zee}{\ensuremath{\Z \rightarrow \e^{+} \e^{-}}\xspace}
+\newcommand{\znunu}{\ensuremath{\Z \rightarrow \nu \bar{\nu}}\xspace}
+\newcommand{\zll}{\ensuremath{\Z \rightarrow \ell^{+}\ell^{-}}\xspace}
+\newcommand{\wlnu}{\ensuremath{\W \rightarrow \ell\nu}\xspace}
+\newcommand{\wenu}{\ensuremath{\W \rightarrow \e\nu}\xspace}
+\newcommand{\wmunu}{\ensuremath{\W \rightarrow \mu \nu}\xspace}
+\newcommand{\zellell}{\ensuremath{\Z \rightarrow \ell^{+} \ell^{-}}\xspace}
+\newcommand{\znunubr}{\ensuremath{\Z ( \nu \bar{\nu} )}\xspace}
+\newcommand{\zellellbr}{\ensuremath{\Z ( \ell^{+} \ell^{-} )}\xspace}
+\newcommand{\wmunubr}{\ensuremath{\W (\mu \nu )}\xspace}
+\newcommand{\wenubr}{\ensuremath{\W (\e\nu )}\xspace}
+\newcommand{\wlnubr}{\ensuremath{\W (\ell \nu )}\xspace}
+\newcommand{\wellnubr}{\ensuremath{\W (\ell \nu )}\xspace}
+\newcommand{\wtaunubr} {\ensuremath{\W (\tau \nu )}\xspace}
+\newcommand{\ztautaubr}{\ensuremath{\Z (\tau \tau)}\xspace}
+\newcommand{\zmumubr}  {\ensuremath{\Z (\mu \mu)}\xspace}
+\newcommand{\zeebr}    {\ensuremath{\Z (\e \e)}\xspace}
+\newcommand{\tfll}     {\ensuremath{TF_\mathrm{LL}}\xspace}
+\newcommand{\ttW}{\ensuremath{\ttbar{}\PW}\xspace}
+\newcommand{\ttZ}{\ensuremath{\ttbar{}\PZ}\xspace}
+
+% object counting
+\newcommand{\Nj}{\ensuremath{N_{\text{j}}}\xspace}
+\newcommand{\Nb}{\ensuremath{N_{\text{b}}}\xspace}
+\newcommand{\Nsv}{\ensuremath{N_{\text{SV}}}\xspace}
+\newcommand{\Nw}{\ensuremath{N_{\text{W}}}\xspace}
+\newcommand{\Nt}{\ensuremath{N_{\text{t}}}\xspace}
+\newcommand{\Nres}{\ensuremath{N_{\text{res}}}\xspace}
+\newcommand{\Ntw}{\ensuremath{N_{\text{tW}}}\xspace}
+% aliases to existing commands
+\newcommand{\nj}{\Nj}
+\newcommand{\nb}{\Nb}
+\newcommand{\nsv}{\Nsv}
+\newcommand{\nw}{\Nw}
+\newcommand{\nt}{\Nt}
+\newcommand{\nrt}{\Nres}
+\newcommand{\ntw}{\Ntw}
+
+% For Z invisible background
+\newcommand{\metlepton}{\ensuremath{\pt^{\mathrm{miss} (LL)}}\xspace}
+\newcommand{\metphoton}{\ensuremath{\pt^{\mathrm{miss} (\gamma)}}\xspace}
+\newcommand{\DRphopar}{\ensuremath{\Delta R_{\gamma p}}\xspace}
+\newcommand{\RZ}{\ensuremath{R_{\PZ}}\xspace}
+\newcommand{\RT}{\ensuremath{R_{\mathrm{T}}}\xspace}
+\newcommand{\SGamma}{\ensuremath{S_{\gamma}}\xspace}
+\newcommand{\NMC}{\ensuremath{N_{\mathrm{MC}}^{\znunu}}\xspace}
+\newcommand{\NP}{\ensuremath{N_{\mathrm{pred}}^{\znunu}}\xspace}
+\newcommand{\Rz}{\RZ}
+\newcommand{\rz}{\RZ}
+\newcommand{\Rt}{\RT}
+\newcommand{\rt}{\RT}
+\newcommand{\SG}{\SGamma}
+\newcommand{\Sg}{\SGamma}
+\newcommand{\sg}{\SGamma}
+\newcommand{\Nmc}{\NMC}
+\newcommand{\nmc}{\NMC}
+\newcommand{\Np}{\NP}
+\newcommand{\np}{\NP}
+
+\newcommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}
+\newlength\cmsTabSkip\setlength{\cmsTabSkip}{1ex}
 
 %\endinput
